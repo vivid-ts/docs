@@ -1,9 +1,8 @@
 ---
 sidebar_position: 1
-title: Pages
 ---
 
-# Creating Pages
+# Pages
 
 Originally inspired by [Next.js](https://nextjs.org/docs/basic-features/pages), Vivid uses the file-system routing approach to create pages. This means that every file inside the `pages` directory is treated as a page.
 
@@ -42,7 +41,7 @@ Vivid brings [Mantine](https://mantine.dev/) UI framework and [Tailwind CSS](htt
 
 ## Configuring a Page
 
-For example, by default, the about page will require [authentication](/docs/guides/authentication) and uses the `AdminLayout` component. You can change this by exporting `Handle` function.
+For example, by default, the about page will require [authentication](/docs/guides/plugins/authentication) and uses the `AdminLayout` component. You can change this by exporting `Handle` function.
 
 ```tsx title="src/pages/about.tsx"
 import { Card } from '@mantine/core';
