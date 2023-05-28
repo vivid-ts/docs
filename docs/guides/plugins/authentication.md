@@ -167,6 +167,7 @@ import { signOut } from '@auth';
 
 export const SignOutButton = () => (
   <ActionIcon color="red">
+    // highlight-next-line
     <SignOut weight="bold" size={20} onClick={signOut} />
   </ActionIcon>
 );
