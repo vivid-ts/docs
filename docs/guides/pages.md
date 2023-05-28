@@ -78,6 +78,30 @@ This is because to ensure HMR (Hot Module Replacement) works properly. You can [
 
 :::
 
+## API
+
+```ts
+export type Meta = {
+  title?: string;
+  description?: string;
+
+  layout?: Layouts;
+  authedOnly?: boolean;
+  acl?:
+    | {
+        action?: Actions;
+        subject?: Subjects;
+      }
+    | false;
+};
+
+export type HandleFunctionResolver = () => Meta;
+```
+
 :::tip
 
-[Read more](/docs/api/handle) about the `Handle` API.
+Read more about [Layouts](./layouts)
+
+Read more about [Access Control List](./plugins/access-control)
+
+:::
