@@ -31,7 +31,7 @@ export type API = {
 
 :::tip
 
-Read more about [ACL API](./plugins/acl)
+Read more about [ACL API](../usage/plugins/acl)
 
 Read more about [Pages Router](/docs/usage/pages)
 

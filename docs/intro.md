@@ -58,4 +58,4 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see runni
 - [Getting Started](./getting-started/installation)
 - [Core Concepts](./core-concepts/overview)
 - [Configuration](./getting-started/configuration)
-- [TypeScript](./getting-started/typescript)
+- [TypeScript](./core-concepts/typescript)

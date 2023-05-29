@@ -66,7 +66,7 @@ export default function Home() {
 
 :::tip
 
-Read more about [Data Fetching](/docs/usage/data-fetching).
+Read more about [Data Fetching](/docs/usage/plugins/data-fetching).
 
 :::
 
@@ -78,10 +78,10 @@ As Vivid is a highly configurable framework, it is important to have type safety
 
 :::tip
 
-Read more about [Configuration](./configuration).
+Read more about [Configuration](/docs/getting-started/configuration).
 
 :::
 
 ---
 
-Above are just some examples of how Typescript is used in Vivid. You can find more examples in the [API Reference](/docs/api).
+Above are just some examples of how Typescript is used in Vivid. You can find more examples in the [API Reference](/docs/api/configuration).
