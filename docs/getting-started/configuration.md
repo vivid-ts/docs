@@ -4,18 +4,50 @@ sidebar_position: 2
 
 # Configuration
 
-You can configure Vivid by editing the `src/config.tsx` file.
+We provide you a flexible way to configure Vivid's behaviour. You can find the configurations in `src/config.tsx` file.
+
+## Brand
+
+You can configure the branding of your app by changing the `brand` object.
 
 ```ts title="src/config.tsx"
-import { House, User } from '@phosphor-icons/react';
-import type { NavigationEntry } from './router';
+import type { Brand } from './types/config';
 
-export const brand = {
+export const brand: Brand = {
   name: 'Vivid',
-  logo: '/vivid.svg',
+  logo: '/vivid.svg',   // relative to public folder
 };
+```
 
-export const navigation: NavigationEntry[] = [
+## API
+
+Since Vivid brings the capability for a flexible data fetching, you can configure it by changing the `api` object.
+
+```ts title="src/config.tsx"
+import type { API } from './types/config';
+
+export const api: API = {
+  enableMocking: true,
+  axios: {
+    baseURL: '/api',
+  },
+};
+```
+
+:::tip
+
+Read more about [Data Fetching](/docs/guides/plugins/data-fetching).
+
+:::
+
+## Navigation
+
+You can configure the sidebar navigation by changing the `navigation` object.
+
+```ts title="src/config.tsx"
+import type { Navigation } from './types/config';
+
+export const navigation: Navigation = [
   {
     name: 'Home',
     path: '/',

@@ -53,6 +53,16 @@ axios.interceptors.response.use(
 
 Vivid uses [MSW](https://mswjs.io/) to mock API requests. You can find the mock handlers in the `src/@mock/handlers` directory.
 
+### Prerequisites
+
+Before you can start mocking API requests, you have to initialize the service worker.
+
+```bash npm2yarn
+npm run mock:init
+```
+
+### Declare Mock Handlers
+
 ```ts title="src/@mock/handlers/user.ts"
 import type { User } from '@auth';
 import { rest } from 'msw';
@@ -83,6 +93,8 @@ export default [
 ];
 
 ```
+
+### Enable Mocking
 
 To enable mocking, you have to enable it in the configuration file.
 

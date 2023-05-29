@@ -20,6 +20,7 @@ Example:
 
 ```tsx title="src/config.tsx"
 import type { NavigationEntry } from './router';
+import { House, User } from '@phosphor-icons/react';
 
 // ...
 
