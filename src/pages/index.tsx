@@ -21,7 +21,7 @@ export default function Home(): JSX.Element {
           <p>{siteConfig.tagline}</p>
         </section>
 
-        {/* <HomepageFeatures /> */}
+        <HomepageFeatures />
       </main>
     </Layout>
   );
