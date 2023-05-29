@@ -1,7 +1,3 @@
----
-sidebar_position: 2
----
-
 # Layouts
 
 By default, Vivid comes with 2 usable layouts, and 2 view layout.
@@ -75,7 +71,7 @@ export const MyLayout = ({ children, page }: MyLayoutProps) => {
 
 ```
 
-To expose it to the [Page Handle](/docs/guides/pages#configuring-a-page), you need to register it in `src/layouts/index.tsx`.
+To expose it to the [Page Handle](/docs/usage/pages#configuring-a-page), you need to register it in `src/layouts/index.tsx`.
 
 ```tsx title="src/layouts/index.tsx"
 // ...

@@ -1,5 +1,4 @@
 ---
-sidebar_position: 2
 sidebar_label: Access Control
 ---
 
@@ -48,7 +47,7 @@ export default function Profile() {
 
 ## Limiting access to routes
 
-You can limit access to specific routes by defining `acl` options in the [Page Handle](/docs/guides/pages#configuring-a-page). For example:
+You can limit access to specific routes by defining `acl` options in the [Page Handle](/docs/usage/pages#configuring-a-page). For example:
 
 ```tsx title="src/pages/Profile.tsx"
 import type { HandleFunctionResolver } from '@/router';
@@ -68,7 +67,7 @@ export const Handle: HandleFunctionResolver = () => ({
 
 :::info
 
-Vivid will render [`NotAvailable`](/docs/guides/layouts#view-layouts) layout if the user does not have access to the page.
+Vivid will render [`NotAvailable`](/docs/usage/layouts#view-layouts) layout if the user does not have access to the page.
 
 :::
 

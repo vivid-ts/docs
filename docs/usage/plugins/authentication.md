@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Authentication
 
 Vivid brings way to authenticate and storing the user's session. You can customize the authentication flow by modifying the `auth` plugin.
@@ -29,7 +25,7 @@ export type SignInOptions = {
 
 :::info
 
-`Rules` type comes from ACL feature in Vivid. You can read more about it in [Access Control](/docs/guides/plugins/access-control).
+`Rules` type comes from ACL feature in Vivid. You can read more about it in [Access Control](/docs/usage/plugins/access-control).
 
 :::
 
@@ -57,7 +53,7 @@ export const resolve = defineResolve(async () => {
 
 :::tip
 
-Read more about [Access Control](/docs/guides/plugins/access-control).
+Read more about [Access Control](/docs/usage/plugins/access-control).
 
 :::
 
@@ -83,7 +79,7 @@ export const signIn = defineSignIn<SignInOptions>(async (data) => {
 
 :::tip
 
-Read more about [Access Control](/docs/guides/plugins/access-control).
+Read more about [Access Control](/docs/usage/plugins/access-control).
 
 :::
 
@@ -152,7 +148,7 @@ export const signOut = defineSignOut(async (user) => {
 
 :::info
 
-Read more about data fetching in [Data Fetching](/docs/guides/plugins/data-fetching).
+Read more about data fetching in [Data Fetching](/docs/usage/plugins/data-fetching).
 
 :::
 

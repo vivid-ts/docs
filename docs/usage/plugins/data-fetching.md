@@ -1,7 +1,3 @@
----
-sidebar_position: 3
----
-
 # Data Fetching
 
 Vivid brings the power of [Axios](https://www.npmjs.com/package/axios) and [SWR](https://swr.vercel.app/) to your app. You can find the configuration file in the `src/plugins/axios.ts` file.

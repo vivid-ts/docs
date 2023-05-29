@@ -1,7 +1,3 @@
----
-sidebar_position: 2
----
-
 # Configuration
 
 We provide you a flexible way to configure Vivid's behaviour. You can find the configurations in `src/config.tsx` file.
@@ -36,7 +32,7 @@ export const api: API = {
 
 :::tip
 
-Read more about [Data Fetching](/docs/guides/plugins/data-fetching).
+Read more about [Data Fetching](/docs/usage/plugins/data-fetching).
 
 :::
 
@@ -70,6 +66,6 @@ export const navigation: Navigation = [
 
 :::tip
 
-Read more about navigation in the [Navigation](/docs/guides/navigation) guide.
+Read more about navigation in the [Navigation](/docs/usage/navigation) guide.
 
 :::

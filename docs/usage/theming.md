@@ -1,7 +1,3 @@
----
-sidebar_position: 3
----
-
 # Theming
 
 Vivid primarily relies on [Tailwind CSS](https://tailwindcss.com/) for styling. You can find the configuration file in the `tailwind.config.js` file.

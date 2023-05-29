@@ -1,10 +1,6 @@
----
-sidebar_position: 6
----
-
 # Navigation
 
-Vivid uses [React Router](https://reactrouter.com/) under the hood for navigation. While routing is [dynamically generated](/docs/guides/pages), you still need to configure sidebar navigation manually.
+Vivid uses [React Router](https://reactrouter.com/) under the hood for navigation. While routing is [dynamically generated](/docs/usage/pages), you still need to configure sidebar navigation manually.
 
 :::info
 
@@ -50,21 +46,3 @@ export const navigation: NavigationEntry[] = [
 ![Navigation Preview](./img/navigation_preview.png)
 
 </div>
-
-## API
-
-```ts
-export type NavigationEntry = {
-  name: string;
-  children?: NavigationEntry[];
-  path?: Path; // Auto-generated routes
-  acl?:
-    | {
-        action?: Actions;
-        subject?: Subjects;
-      }
-    | false;
-  icon?: JSX.Element;
-  heading?: string;
-};
-```

@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Installation
 
 Vivid is essentially just a custom tailored Vite project.
@@ -25,13 +21,19 @@ To start, you need to clone the repository:
 git clone https://github.com/vivid-ts/vivid.git
 ```
 
-:::note
+:::info
 
 Currently, that is the only way to get started with Vivid.
 
 :::
 
 Vivid project requires you to use [TypeScript](https://www.typescriptlang.org/) for better type safety and linting.
+
+:::tip
+
+Read more about [TypeScript](../core-concepts/typescript) in Vivid.
+
+:::
 
 ## File Structure
 

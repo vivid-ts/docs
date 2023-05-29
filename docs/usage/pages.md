@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Pages
 
 Originally inspired by [Next.js](https://nextjs.org/docs/basic-features/pages), Vivid uses the file-system routing approach to create pages. This means that every file inside the `pages` directory is treated as a page.
@@ -41,7 +37,7 @@ Vivid brings [Mantine](https://mantine.dev/) UI framework and [Tailwind CSS](htt
 
 ## Configuring a Page
 
-For example, by default, the about page will require [authentication](/docs/guides/plugins/authentication) and uses the `AdminLayout` component. You can change this by exporting `Handle` function.
+For example, by default, the about page will require [authentication](/docs/usage/plugins/authentication) and uses the `AdminLayout` component. You can change this by exporting `Handle` function.
 
 ```tsx title="src/pages/about.tsx"
 import { Card } from '@mantine/core';
@@ -78,30 +74,58 @@ This is because to ensure HMR (Hot Module Replacement) works properly. You can [
 
 :::
 
-## API
-
-```ts
-export type Meta = {
-  title?: string;
-  description?: string;
-
-  layout?: Layouts;
-  authedOnly?: boolean;
-  acl?:
-    | {
-        action?: Actions;
-        subject?: Subjects;
-      }
-    | false;
-};
-
-export type HandleFunctionResolver = () => Meta;
-```
-
 :::tip
 
 Read more about [Layouts](./layouts)
 
 Read more about [Access Control List](./plugins/access-control)
+
+:::
+
+## TypeScript Support
+
+Generouted will automatically generate type-safe utility, hooks, and components for you.
+
+For example, if your pages directory looks like this:
+
+```bash
+vivid
+├── src
+│   ├── pages
+│   │   ├── 404.tsx
+│   │   ├── _app.tsx
+│   │   ├── data
+│   │   │   └── users.tsx
+│   │   ├── index.tsx
+│   │   └── login.tsx
+```
+
+Then, Generouted will generate the following types:
+
+```ts title="src/router/utils.ts"
+// Generouted, changes to this file will be overriden
+/* eslint-disable */
+
+import { components, hooks, utils } from '@generouted/react-router/client'
+
+export type Path =
+  | `/`
+  | `/data/user`
+  | `/login`
+
+export type Params = {
+  
+}
+
+export type ModalPath = never
+
+export const { Link, Navigate } = components<Path, Params>()
+export const { useModals, useNavigate, useParams } = hooks<Path, Params, ModalPath>()
+export const { redirect } = utils<Path, Params>()
+```
+
+:::tip
+
+Read more about Generouted [Type-safe Routing](https://github.com/oedotme/generouted/tree/main/plugins/react-router).
 
 :::

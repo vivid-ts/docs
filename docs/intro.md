@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Introduction
 
 🚀 Vivid will help you to create a beautiful and functional admin panel for your next project.
@@ -56,3 +52,10 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see running instance.
+
+## Want to learn more? {#learn-more}
+
+- [Getting Started](./getting-started/installation)
+- [Core Concepts](./core-concepts/overview)
+- [Configuration](./getting-started/configuration)
+- [TypeScript](./getting-started/typescript)

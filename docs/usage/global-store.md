@@ -1,7 +1,3 @@
----
-sidebar_position: 4
----
-
 # Global Store
 
 Vivid uses [Zustand](https://github.com/pmndrs/zustand) under the hood for global state management. You can find the store in the `src/hooks` directory.
@@ -32,6 +28,6 @@ Vivid uses `loading` state to determine whether the app is still loading or not.
 
 :::tip
 
-You can find the function that take cares for the initiation of the app in `src/lib/core/init.ts`. You can also read about [Authenticating](/docs/guides/plugins/authentication) as it also have a role in the initiation of the app.
+You can find the function that take cares for the initiation of the app in `src/lib/core/init.ts`. You can also read about [Authenticating](/docs/usage/plugins/authentication) as it also have a role in the initiation of the app.
 
 :::
