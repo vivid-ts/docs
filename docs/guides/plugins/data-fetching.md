@@ -8,11 +8,16 @@ Vivid brings the power of [Axios](https://www.npmjs.com/package/axios) and [SWR]
 
 ```ts title="src/plugins/axios.ts"
 import Axios from 'axios';
+import { api } from '@/config';
 
-export const axios = Axios.create({
-  // Configure this to your own API usage
-});
+export const axios = Axios.create(api.axios);
 ```
+
+:::tip
+
+Read more about [Configuration](/docs/getting-started/configuration)
+
+:::
 
 By default, Vivid configures axios interceptor to automatically add the `Authorization` header to every request & redirects to the login page if the request returns `401` status code. 
 
@@ -46,11 +51,11 @@ axios.interceptors.response.use(
 
 ## Mocking API
 
-Vivid uses [axios-mock-adapter](https://www.npmjs.com/package/axios-mock-adapter) at the moment to mock API calls. You can register mock endpoints in the `src/@mock/handlers` directory.
+Vivid uses [MSW](https://mswjs.io/) to mock API requests. You can find the mock handlers in the `src/@mock/handlers` directory.
 
 ```ts title="src/@mock/handlers/user.ts"
 import type { User } from '@auth';
-import type MockAdapter from 'axios-mock-adapter';
+import { rest } from 'msw';
 
 const data: User[] = [
   {
@@ -63,44 +68,47 @@ const data: User[] = [
   // ...
 ];
 
-export default (mock: MockAdapter) => {
-  mock.onGet('/user').reply(200, data);
+export default [
+  rest.get('/api/user', (_, res, ctx) => {
+    return res(ctx.json(data));
+  }),
+
+  rest.get('/api/me', (_, res, ctx) => {
+    return res(ctx.json(data[0]));
+  }),
+
+  rest.post('/api/login', (_, res, ctx) => {
+    return res(ctx.json(data[0]));
+  }),
+];
+
+```
+
+To enable mocking, you have to enable it in the configuration file.
+
+:::caution
+
+Mocking will be only enabled in the development environment, even if you set `enableMocking` to `true` in the production environment.
+
+:::
+
+```ts title="src/config.tsx"
+export const api: API = {
+  // highlight-next-line
+  enableMocking: true,
 };
 ```
 
-To register the mock handler, you need to call `registerMock` with the axios instance.
+## SWR
 
-```ts title="src/plugins/axios.ts"
-import Axios from 'axios';
-// highlight-next-line
-import { registerMock } from '@mock';
-
-export const axios = Axios.create({
-  // Configure this to your own API usage
-});
-
-// highlight-next-line
-registerMock(axios);
-```
-
-### Usage with SWR
+Vivid brings the power of SWR to supercharge your data fetching experience. By default, Vivid sets default fetcher globally in `src/pages/_app.tsx` file.
 
 ```tsx title="src/pages/data/user.tsx"
 import useSWR from 'swr';
 
-export default function Users() {
+export default function User() {
   const { data } = useSWR<User[]>('/user');
 
   // ...
 }
 ```
-
-:::info
-
-We are planning to migrate mocking to [MSW](https://mswjs.io/) in the future.
-
-:::
-
-## SWR
-
-Vivid brings the power of SWR to supercharge your data fetching experience. By default, Vivid sets default fetcher globally in `src/pages/_app.tsx` file.
