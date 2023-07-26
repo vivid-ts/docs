@@ -44,7 +44,7 @@ const config = {
           editUrl:
             'https://github.com/vivid-ts/docs/tree/main/',
           remarkPlugins: [
-            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
           ],
         },
         blog: {
@@ -54,12 +54,12 @@ const config = {
           editUrl:
             'https://github.com/vivid-ts/docs/tree/main/',
           remarkPlugins: [
-            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
           ],
         },
         pages: {
           remarkPlugins: [
-            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
           ],
         },
         theme: {
@@ -93,7 +93,7 @@ const config = {
             position: 'left',
             label: 'API',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/vivid-ts/vivid',
             // label: 'GitHub',
@@ -154,20 +154,21 @@ const config = {
       },
     }),
 
-    plugins: [
-      async function tailwind(context, options) {
-        return {
-          name: "docusaurus-tailwindcss",
-          configurePostCss(postcssOptions) {
-            // Appends TailwindCSS and AutoPrefixer.
-            postcssOptions.plugins.push(require("tailwindcss"));
-            postcssOptions.plugins.push(require("autoprefixer"));
-            
-            return postcssOptions;
-          },
-        };
-      },
-    ]
+  plugins: [
+    async function tailwind(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+
+          return postcssOptions;
+        },
+      };
+    },
+    require.resolve('docusaurus-lunr-search'),
+  ]
 };
 
 module.exports = config;

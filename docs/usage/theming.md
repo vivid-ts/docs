@@ -1,5 +1,7 @@
 # Theming
 
+## TailwindCSS
+
 Vivid primarily relies on [Tailwind CSS](https://tailwindcss.com/) for styling. You can find the configuration file in the `tailwind.config.js` file.
 
 ```js title="tailwind.config.js"
