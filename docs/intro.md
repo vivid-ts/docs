@@ -1,47 +1,61 @@
----
-sidebar_position: 1
----
+# Introduction
 
-# Tutorial Intro
+🚀 Vivid will help you to create a beautiful and functional admin panel for your next project.
 
-Let's discover **Docusaurus in less than 5 minutes**.
+💸 Building everything from scratch is expensive. Vivid will save you time and money.
 
-## Getting Started
+🧐 Vivid is a jam-packed admin panel template that will help you to kickstart your next project. It's powered by [React](https://reactjs.org/) & [Vite](https://vitejs.dev/), and it's built on top of [Mantine](https://mantine.dev/) UI framework & [Tailwind CSS](https://tailwindcss.com/).
 
-Get started by **creating a new site**.
+## Features
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+📁 File-system routing
 
-### What you'll need
+💂 Access Control List (ACL)
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+💳 Authentication API
 
-## Generate a new site
+📥 Global stores
 
-Generate a new Docusaurus site using the **classic template**.
+💽 Data fetching
 
-The classic template will automatically be added to your project after you run the command:
+🎨 Theming
+
+🧩 Component library & Layouts
+
+... and more!
+
+## Interested? Let's get started! ✅ {#get-started}
+
+:::tip
+
+Make sure you've installed [Node.js](https://nodejs.org/en/download) before you proceed.
+
+:::
+
+To start, you need to clone the repository:
 
 ```bash
-npm init docusaurus@latest my-website classic
+git clone https://github.com/vivid-ts/vivid.git
+cd vivid
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+Then, you need to install the dependencies:
 
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
+```bash npm2yarn
+npm i
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+Finally, you can start the development server:
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+```bash npm2yarn
+npm run dev
+```
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see running instance.
+
+## Want to learn more? {#learn-more}
+
+- [Getting Started](./getting-started/installation)
+- [Core Concepts](./core-concepts/overview)
+- [Configuration](./getting-started/configuration)
+- [TypeScript](./core-concepts/typescript)

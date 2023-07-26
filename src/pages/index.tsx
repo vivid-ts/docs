@@ -3,8 +3,6 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
 
 export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
@@ -20,8 +18,6 @@ export default function Home(): JSX.Element {
           <h1 className='font-semibold text-4xl'>{siteConfig.title}</h1>
           <p>{siteConfig.tagline}</p>
         </section>
-
-        {/* <HomepageFeatures /> */}
       </main>
     </Layout>
   );
